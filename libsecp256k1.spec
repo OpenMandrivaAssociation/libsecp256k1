@@ -7,7 +7,7 @@
 Name:		libsecp256k1
 Summary:	Optimized C library for EC operations on curve secp256k1
 Version:	0.22.0
-Release:	%mkrel 1
+Release:	1
 License:	MIT
 Group:		System/Libraries
 Url:		https://github.com/Bitcoin-ABC/secp256k1
@@ -28,6 +28,7 @@ Features:
 %package -n %{libname}
 Summary:	Optimized C library for EC operations on curve secp256k1
 Group:		System/Libraries
+Provides:	libsecp256k1 = %{EVRD}
 
 %description -n %{libname}
 Optimized C library for EC operations on curve secp256k1.
