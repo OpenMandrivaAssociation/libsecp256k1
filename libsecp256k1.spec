@@ -72,8 +72,6 @@ find %{buildroot} -name "*.la" -delete
 %{_libdir}/libsecp256k1.so.%{major}{,.*}
 
 %files -n %{devname}
-%{_includedir}/secp256k1.h
-%{_includedir}/secp256k1_preallocated.h
-%{_includedir}/secp256k1_schnorr.h
+%{_includedir}/secp256k1*.h
 %{_libdir}/libsecp256k1.so
 
