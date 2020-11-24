@@ -13,6 +13,7 @@ Group:		System/Libraries
 Url:		https://github.com/Bitcoin-ABC/secp256k1
 Source0:	https://github.com/Bitcoin-ABC/secp256k1/archive/v%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:	pkgconfig(libcrypto)
+BuildRequires:	cmake
 
 %description
 Optimized C library for EC operations on curve secp256k1.
@@ -55,16 +56,11 @@ This package contains the development files and headers for %{name}.
 %setup -qn %{oname}-%{version}
 
 %build
-autoreconf -vfi
-export CC=%__cc
-export CC_FOR_BUILD=%__cc
-export CFLAGS_FOR_BUILD="%{optflags}"
-%configure \
-	--disable-static
+%cmake
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 #we don't want these
 find %{buildroot} -name "*.la" -delete
@@ -80,5 +76,4 @@ find %{buildroot} -name "*.la" -delete
 %{_includedir}/secp256k1_preallocated.h
 %{_includedir}/secp256k1_schnorr.h
 %{_libdir}/libsecp256k1.so
-%{_libdir}/pkgconfig/libsecp256k1.pc
 
