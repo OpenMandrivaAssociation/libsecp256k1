@@ -56,7 +56,8 @@ This package contains the development files and headers for %{name}.
 %setup -qn %{oname}-%{version}
 
 %build
-%cmake -DSECP256K1_ENABLE_MODULE_ECDH=ON
+%cmake -DSECP256K1_ENABLE_MODULE_ECDH=ON \
+	-DSECP256K1_ENABLE_MODULE_RECOVERY=ON
 %make_build
 
 %install
