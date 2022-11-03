@@ -6,7 +6,7 @@
 
 Name:		libsecp256k1
 Summary:	Optimized C library for EC operations on curve secp256k1
-Version:	0.22.0
+Version:	0.26.4
 Release:	1
 License:	MIT
 Group:		System/Libraries
